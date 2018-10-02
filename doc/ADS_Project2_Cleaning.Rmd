@@ -1,0 +1,64 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(ggmap)
+```
+
+## Process Raw Data
+```{r}
+hospital <- read.csv("/Users/GhadaJerfel/Desktop/Group 4/Hospital General Information.csv")
+iips_data <- read.csv("/Users/GhadaJerfel/Desktop/Group 4/Inpatient_Prospective_Payment_System__IPPS__Provider_Summary_for_the_Top_100_Diagnosis-Related_Groups__DRG__-_FY2011.csv")
+#transform the address into latitude and longtitude
+latlng <- read.csv("laglng_transform.csv")
+```
+
+```{r}
+colnames(iips_data)[colnames(iips_data)=="Provider.Id"] <- "Provider.ID"
+
+# add latitude and longtitude data in hospital data
+hospital$latitude <- latlng[,1]
+hospital$longtitude <- latlng[,2]
+```
+
+```{r}
+# unique(hospital$Efficient.use.of.medical.imaging.national.comparison)
+# Turn "Not Available" into NA, "Above Average" into 3, "Average" into 2 and "Below Average" into 1.
+levels(hospital$Efficient.use.of.medical.imaging.national.comparison) <- c(3, 1, NA, 2)
+levels(hospital$Timeliness.of.care.national.comparison) <- c(3, 1, NA, 2)
+levels(hospital$Effectiveness.of.care.national.comparison) <- c(3, 1, NA, 2)
+levels(hospital$Patient.experience.national.comparison) <- c(3, 1, NA, 2)
+levels(hospital$Readmission.national.comparison) <- c(3, 1, NA, 2)
+levels(hospital$Safety.of.care.national.comparison) <- c(3, 1, NA, 2)
+levels(hospital$Mortality.national.comparison) <- c(3, 1, NA, 2)
+levels(hospital$Hospital.overall.rating) <- c(1, 2, 3, 4, 5, NA)
+```
+
+```{r}
+hospital <- hospital[,c(-14,-16,-18,-20,-22,-24,-26,-28)]
+```
+
+## Delete latitude/longitude NA rows and error rows as it cannot be visualized on the map
+```{r}
+hos <- hospital[is.na(hospital$latitude) == F & is.na(hospital$longtitude) == F,]
+save(hos,file = "/Users/GhadaJerfel/Desktop/group 4/hos.RData")
+```
+
+## Merge hospital data into iips_datda dataset
+```{r}
+iips_data <- iips_data %>%
+  merge(hos, by = "Provider.ID",all=TRUE)
+
+write.csv(iips_data,file = "/Users/GhadaJerfel/Desktop/group 4/iips.csv")
+```
+
+```{r}
+unique(iips_data$DRG.Definition)
+```
+
+
+
