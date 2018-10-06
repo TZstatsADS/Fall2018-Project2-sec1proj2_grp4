@@ -10,15 +10,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-library("dplyr")
+library(dplyr)
 library(highcharter)
-
-setwd("C:/Users/Xiaojie Wei/Desktop/Fall 2018/GR5243 Applied Data Science/Project 2")
-iips_data <- read.csv("data/Inpatient_Prospective_Payment_System__IPPS__Provider_Summary_for_the_Top_100_Diagnosis-Related_Groups__DRG__-_FY2011.csv")
-
 data("USArrests", package = "datasets")
 data("usgeojson")
 
+setwd("C:/Users/Xiaojie Wei/Desktop/Fall 2018/GR5243 Applied Data Science/Project 2")
+load("output/iips_data.RData")
+load("output/iips_add.RData")
 ```
 
 
@@ -28,6 +27,13 @@ data("usgeojson")
 charge_by_states <- iips_add %>% group_by(Provider.State) %>% dplyr::summarise(Total = n()) 
 charge_by_states$statename <- state.name[match(charge_by_states$Provider.State, state.abb)]
 charge_by_states[is.na(charge_by_states)] <- "DC"
+save(charge_by_states,file = "output/charge_by_state.RData")
+```
+
+```{r}
+dshmstops <- data.frame(q = c(0, exp(1:5)/exp(5)), 
+                        c = substring(viridis(5 + 1), 0, 7)) %>% 
+  list.parse2()
 
 highchart() %>%
   hc_add_series_map(usgeojson, charge_by_states, name = "Number of Hospitals",
@@ -36,10 +42,6 @@ highchart() %>%
   hc_credits(enabled = TRUE, text = "Source :  https://www.medicare.gov ") %>%
   hc_add_theme(hc_theme_google())  %>%
   hc_mapNavigation(enabled = TRUE)
-
-```
-
-```{r}
 
 ```
 
