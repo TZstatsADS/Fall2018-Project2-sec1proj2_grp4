@@ -1,0 +1,45 @@
+---
+title: "Untitled"
+author: "Xiaojie Wei"
+date: "October 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library("dplyr")
+library(highcharter)
+
+setwd("C:/Users/Xiaojie Wei/Desktop/Fall 2018/GR5243 Applied Data Science/Project 2")
+iips_data <- read.csv("data/Inpatient_Prospective_Payment_System__IPPS__Provider_Summary_for_the_Top_100_Diagnosis-Related_Groups__DRG__-_FY2011.csv")
+
+data("USArrests", package = "datasets")
+data("usgeojson")
+
+```
+
+
+```{r}
+#"Population" Size: Hospital numbers for each state
+#Mapping of Hospitals Numbers
+charge_by_states <- iips_add %>% group_by(Provider.State) %>% dplyr::summarise(Total = n()) 
+charge_by_states$statename <- state.name[match(charge_by_states$Provider.State, state.abb)]
+charge_by_states[is.na(charge_by_states)] <- "DC"
+
+highchart() %>%
+  hc_add_series_map(usgeojson, charge_by_states, name = "Number of Hospitals",
+                    value = "Total", joinBy = c("woename", "statename"), dataLabels = list(enabled = TRUE, format = '{point.name}'))  %>% 
+  hc_colorAxis(stops = dshmstops) %>%
+  hc_credits(enabled = TRUE, text = "Source :  https://www.medicare.gov ") %>%
+  hc_add_theme(hc_theme_google())  %>%
+  hc_mapNavigation(enabled = TRUE)
+
+```
+
+```{r}
+
+```
+
