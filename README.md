@@ -18,7 +18,10 @@ Term: Fall 2018
 + **Project summary**:Good health is very important because a person of good health can put through a large amount of work in a short time. So people put more attention on personal health in today's society.In attempt to help patients better explore the comparative price of procedures and estimate their medical service prior to receiving care, Our group design an interactive finding hospital App using Shiny app in R. This APP will help patients to do some filter of hospital such as location,hospital type,expection cost range and emergency service. Also we rank all the hospitals that satisfy our choosing criticals in order to help patients make dicisons. We also visualize the average total cost of state and average total cost of disease
 
 
-+ **Data introduction**: The original dataset contains data on 100 procedures insured by Medicare and provided by more than 3,000 US hospitals. https://www.data.gov/health/hospital-charge-data/
++ **Data introduction**: 
+	+ Medicare hospital quality data: https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data
+	+ Medicare inpatient charge data: https://www.data.gov/health/hospital-charge-data/  
+		The original dataset contains data on 100 procedures insured by Medicare and provided by more than 3,000 US hospitals. 
 
 + **App introduction**:
 The application has 3 sections:
