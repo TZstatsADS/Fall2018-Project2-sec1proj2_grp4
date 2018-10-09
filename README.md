@@ -27,11 +27,11 @@ FAQ: It shows all the information about our data and all the instructions about 
 + **Contribution statement**: 
 All team members are actively involved in all stages of this project and help design the app. All team members combined and modified codes together.
 
-      +zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
-      +Xiaojie Wei: Designed the ui and server part of "key statistic"
-      +Ghada Jerfel: Designed the ui and server part of "key statistic"
-      +Xiaoyi li: Designed the ui and server part of "Hospital recommendation"
-      +Perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
+  +zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
+  +Xiaojie Wei: Designed the ui and server part of "key statistic"
+  +Ghada Jerfel: Designed the ui and server part of "key statistic"
+  +Xiaoyi li: Designed the ui and server part of "Hospital recommendation"
+  +Perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
 
 
 
