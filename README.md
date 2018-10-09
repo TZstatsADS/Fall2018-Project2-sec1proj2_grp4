@@ -21,7 +21,6 @@ Term: Fall 2018
 + **Data introduction**: 
 	+ Medicare Hospital Quality Data: https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data
 	+ Medicare Inpatient Charge Data: https://www.data.gov/health/hospital-charge-data/  
-		The original dataset contains data on 100 procedures insured by Medicare and provided by more than 3,000 US hospitals. 
 
 + **App introduction**:
 The application has 3 sections:
