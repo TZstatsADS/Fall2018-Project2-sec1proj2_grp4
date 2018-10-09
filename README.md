@@ -8,7 +8,7 @@
 Term: Fall 2018
 
 + Team #4
-+ **kNOW YOUR HOSPITALS**: + Team members
++ **KNOW YOUR HOSPITALS**: + Team members
 	+ team member 1 Zehan Wang
 	+ team member 2 Xiaojie Wei
 	+ team member 3 Ghada Jerfel
@@ -20,19 +20,18 @@ Term: Fall 2018
 + **App introduction**:
 The application has 3 sections:
 
-Hospital Recommendation: Select State,hospital type,disease type,expection cost range and emergency service then all hospitals that satisfies those criterion will show on the map. Then at the bottom of the app it will shows the hospital general information.
-Key Statistic : 
-FAQ: 
+Hospital Recommendation: Selecting State,hospital type,disease type,expection cost range and emergency service then all hospitals that satisfies those criterions will show on the map. Then at the bottom of this part it will shows the hospital general information table 
+Key Statistic : According to different type of disease this part will show average total cost in each states. This is general statistic information about hospital.
+FAQ: It shows all the information about our data and all the instructions about our app. Please see FAQ if you have any questions.
 
 + **Contribution statement**: 
-All team members are actively involved in all stages of this project and help design the app. 
+All team members are actively involved in all stages of this project and help design the app. All team members combined and modified codes together.
+
 zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
 Xiaojie Wei: Designed the ui and server part of "key statistic"
-Ghada Jerfel: Designed the ui and server part of "Hospital recommendation"
+Ghada Jerfel: Designed the ui and server part of "key statistic"
 Xiaoyi li: Designed the ui and server part of "Hospital recommendation"
 Perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
-All team members combined and modified codes together.
-
 
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
