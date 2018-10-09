@@ -25,13 +25,13 @@ Key Statistic : According to different type of disease this part will show avera
 FAQ: It shows all the information about our data and all the instructions about our app. Please see FAQ if you have any questions.
 
 + **Contribution statement**: 
+  + zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
+  + xiaojie Wei: Designed the ui and server part of "key statistic"
+  + Ghada Jerfel: Designed the ui and server part of "key statistic"
+  + xiaoyi li: Designed the ui and server part of "Hospital recommendation"
+  + perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
 All team members are actively involved in all stages of this project and help design the app. All team members combined and modified codes together.
 
-  +zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
-  +Xiaojie Wei: Designed the ui and server part of "key statistic"
-  +Ghada Jerfel: Designed the ui and server part of "key statistic"
-  +Xiaoyi li: Designed the ui and server part of "Hospital recommendation"
-  +Perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
 
 
 
