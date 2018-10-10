@@ -1,4 +1,4 @@
-packages.used=c("shiny", "plotly", "shinydashboard", "leaflet", "shinythemes","setBackgroundImage")
+packages.used=c("shiny", "plotly", "shinydashboard", "leaflet", "shinythemes","shinyWidgets","highcharter")
 
 # check packages that need to be installed.
 packages.needed=setdiff(packages.used, 
@@ -37,7 +37,7 @@ navbarPage(title = "Hospital Finder",
                             "TX","UT","VT","VA","WA","WV","WI","WY"), selected = "Select"),
       selectInput("type", label = "Hospital Type", 
                   choices = c("Select","Acute Care Hospitals","Critical Access Hospitals","Childrens"), selected = "Select"),
-      selectInput("DRG", label = "Diagnosis-Related Group", choices = c(levels(iips_data$DRG.Definition), "Select"), selected = "Select"),
+      selectInput("DRG", label = "Diagnosis-Related Group (DRG)", choices = c(levels(iips_data$DRG.Definition), "Select"), selected = "Select"),
       sliderInput("cost", label = "Budget", min = 2000, max = 20000, value = 20000),
       selectInput("EM", label ="Emergency Service", choices = c("Select","Yes", "No"), selected = "Select"),
       
@@ -67,25 +67,25 @@ navbarPage(title = "Hospital Finder",
     tabPanel("Personalized Recommendation",sidebarLayout(position = "right",
                                   sidebarPanel(
              radioButtons("care1",label = "Mortality Rate",
-                          choices = list("Care a Lot"=3,"Just Care"=2,"Care Less"=1),
+                          choices = list("I Care Alot"=3,"I'm Neutral"=2,"I Don't Care"=1),
                           selected = 2, inline = T),
              radioButtons("care2",label = "Safety of Care",
-                          choices = list("Care a Lot"=3,"Just Care"=2,"Care Less"=1),
+                          choices = list("I Care Alot"=3,"I'm Neutral"=2,"I Don't Care"=1),
                           selected = 2, inline = T),
              radioButtons("care3",label = "Readmission Rate",
-                          choices = list("Care a Lot"=3,"Just Care"=2,"Care Less"=1),
+                          choices = list("I Care Alot"=3,"I'm Neutral"=2,"I Don't Care"=1),
                           selected = 2, inline = T),
              radioButtons("care4",label = "Patient Experience",
-                          choices = list("Care a Lot"=3,"Just Care"=2,"Care Less"=1),
+                          choices = list("I Care Alot"=3,"I'm Neutral"=2,"I Don't Care"=1),
                           selected = 2, inline = T),
              radioButtons("care5",label = "Effectiveness of Care",
-                          choices = list("Care a Lot"=3,"Just Care"=2,"Care Less"=1),
+                          choices = list("I Care Alot"=3,"I'm Neutral"=2,"I Don't Care"=1),
                           selected = 2, inline = T),
              radioButtons("care6",label = "Timeliness of Care",
-                          choices = list("Care a Lot"=3,"Just Care"=2,"Care Less"=1),
+                          choices = list("I Care Alot"=3,"I'm Neutral"=2,"I Don't Care"=1),
                           selected = 2, inline = T),
              radioButtons("care7",label = "Efficient Use of Medical Imaging",
-                          choices = list("Care a Lot"=3,"Just Care"=2,"Care Less"=1),
+                          choices = list("I Care Alot"=3,"I'm Neutral"=2,"I Don't Care"=1),
                           selected = 2, inline = T),
              submitButton("Find Your Hospital Today!",width='100%')),
              mainPanel(
@@ -112,11 +112,10 @@ navbarPage(title = "Hospital Finder",
                tabPanel("General Statistics",
                         sidebarLayout(
                           sidebarPanel(
-                            h2("Why we care about Medicare Payments?"),
-                            helpText("In this section, we have an interactive map that represents the number of hospitals in each state. 
-                                      We also have a graph that represents the ratio of medicare payments to covered charges for 25 hospitals that have the highest ratio. 
-                                     In fact, this graph tells that hospitals received more in medicare payments than what they charged. 
-                                     As such, this tells us about a possible error in entering and/or processing such information.")
+                            h2("Hospitals Overview")
+                            #helpText("In this section, we have an interactive map that represents the number of hospitals in each state. 
+                             #         We also have a graph that represents the ratio of medicare payments to covered charges for 25 hospitals that have the highest ratio. 
+                              #       In fact, this graph tells that hospitals received more in medicare payments than what they received from insurance companies for patients medical care.")
                             ),
                           mainPanel(
                           tabsetPanel(
@@ -141,9 +140,9 @@ navbarPage(title = "Hospital Finder",
                           ),
                           mainPanel(
                             tabsetPanel(
-                              tabPanel("Average Covered Cost",highchartOutput("plot2")),
-                              tabPanel("Average Medicare Payments",highchartOutput("plot3")),
-                              tabPanel("Average Total Payments",highchartOutput("plot4"))
+                              tabPanel("Average Covered Cost",highchartOutput("plot2",height = 650)),
+                              tabPanel("Average Medicare Payments",highchartOutput("plot3",height = 650)),
+                              tabPanel("Average Total Payments",highchartOutput("plot4",,height = 650))
                             )
                           )                                                                            
                         )
@@ -179,7 +178,7 @@ navbarPage(title = "Hospital Finder",
                setBackgroundImage(src = "https://media.istockphoto.com/photos/blue-soft-background-picture-id689752378?k=6&m=689752378&s=612x612&w=0&h=6KFi1iqcd5LVwA0bzgrdF1jzSK2fS6hfBqAdcNJnB-c="),
                tabPanel("About Us",
                         
-                        #includeCSS("theme.css"),
+                        includeCSS("theme.css"),
                         mainPanel(
                           h2(textOutput("read0")),
                           textOutput("read1"),
@@ -202,7 +201,7 @@ navbarPage(title = "Hospital Finder",
                           hr(),
                           h3(textOutput("read12")),
                           hr(),
-                          textOutput("read13"),
+                          strong(textOutput("read13")),
                           textOutput("read14"),
                           textOutput("read15"),
                           textOutput("read16"),
@@ -211,14 +210,14 @@ navbarPage(title = "Hospital Finder",
                           textOutput("read19"),
                           textOutput("read20"),
                           hr(),
-                          textOutput("read21"),
+                          strong(textOutput("read21")),
                           textOutput("read22"),
                           textOutput("read23"))),
                tabPanel("About the Data",
                         mainPanel(
                           h2(textOutput("read24")),
                           hr(),
-                          textOutput("read25"),
+                          strong(textOutput("read25")),
                           textOutput("read26"),
                           textOutput("read27"),
                           textOutput("read28"),
@@ -230,7 +229,7 @@ navbarPage(title = "Hospital Finder",
                           textOutput("read34"),
                           a("Here",href = "https://www.medicare.gov/hospitalcompare/Data/Measure-groups.html"),
                           hr(),
-                          textOutput("read35"),
+                          strong(textOutput("read35")),
                           textOutput("read36"),
                           textOutput("read37"),
                           textOutput("read38"),

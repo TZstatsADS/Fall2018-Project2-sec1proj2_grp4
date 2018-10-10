@@ -404,19 +404,19 @@ shinyServer(function(input, output){
   output$plot11 <- renderPlot({
     
     iips_data %>%
-      mutate(ratio = iips_data$Average.Medicare.Payments/Average.Covered.Charges) %>%
+      mutate(ratio = Average.Total.Payments/(Average.Covered.Charges+Average.Medicare.Payments+Average.Total.Payments)) %>%
       group_by(Provider.Name) %>%
       summarize(m.ratio = mean(ratio)) %>%
       arrange(-m.ratio) %>%
-      head(25) %>%
-      ggplot(aes(x=reorder(Provider.Name, -m.ratio), y=m.ratio)) +
+      tail(25) %>%
+      ggplot(aes(x=reorder(Provider.Name, m.ratio), y=m.ratio)) +
       geom_bar(stat="identity", fill="#009E73", color="white") +
-      ggtitle("Ratio of Medicare Payments to Covered Charges") +
+      ggtitle("Ratio of Total Payments to Total Charges") +
       theme(plot.title = element_text(hjust = 0.5)) +
       labs(x="Hospital Name", y="% Ratio") +
       theme(text=element_text(size=10), axis.text.x = element_text(angle = 45, hjust = 1, size = 8)) +
       geom_text(aes(x=Provider.Name, y=round(m.ratio,2), label=round(m.ratio,2), pos=2, vjust=-0.5)) +
-      scale_y_continuous(limits = c(0,2.5), labels = scales::percent)
+      scale_y_continuous(limits = c(0,0.25), labels = scales::percent)
     
     
     
@@ -442,15 +442,15 @@ shinyServer(function(input, output){
     
   })
   
-  output$explain0<- renderText({"This graph tells us that hospitals received more in Medicare payments than what they charged. This tells us about possible error in entering and processing such information."})
+  output$explain0<- renderText({"This graph represents the hospitals with the lowest ratios of total payments to the sum of total payments, covered charges and medicare payments. These are the top 25 hospitals where patients relatively paid the lowest for their medical care out of the total medical charges."})
   
   output$read0<- renderText({"About Us"})
   output$read1<- renderText({"This app was developed by a team of 5 dedicated members at Columbia Univerisity in Fall 2018:"})
-  output$read2<- renderText({"Ghada, Jerfel | gj2261@barnard.edu"})
-  output$read3<- renderText({"Jin, Peiqi | pj2324@columbia.edu"})
-  output$read4<- renderText({"li, Xiaoyi | xl2694@columbia.edu"})
-  output$read5<- renderText({"Wang, Zehan | zw2457@columbia.edu"})
-  output$read6<- renderText({"Wei, Xiaojie | xw2536@columbia.edu"})
+  output$read2<- renderText({"Ghada, Jerfel ( gj2261@barnard.edu )"})
+  output$read3<- renderText({"Jin, Peiqi ( pj2324@columbia.edu )"})
+  output$read4<- renderText({"li, Xiaoyi ( xl2694@columbia.edu )"})
+  output$read5<- renderText({"Wang, Zehan ( zw2457@columbia.edu )"})
+  output$read6<- renderText({"Wei, Xiaojie ( xw2536@columbia.edu )"})
   output$read7<- renderText({"Each one of these Columbia University students contributed to this application so they can make your access to information readily available and more personalized. 
     We wish you good health and we hope that you find our app of use."})
   
