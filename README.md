@@ -26,9 +26,7 @@ Good health is very important because a person of good health can put through a 
 	+ Medicare Inpatient Charge Data: https://www.data.gov/health/hospital-charge-data/  
 	+ Medicare Hospital Quality Data: https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data
 
-+ **App introduction**:
-
-The application has 3 sections:
++ **App introduction**: The application has 3 sections:
 
 	+ Hospital Recommendation: Selecting State, hospital type, disease type, expection cost range and emergency service then all hospitals that satisfies those criterions will show on the map. Then at the bottom of this part it will shows the hospital general information table 
 	+ Key Statistic: According to different type of disease this part will show average total cost in each states. This is general statistic information about hospital.
