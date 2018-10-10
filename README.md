@@ -30,8 +30,8 @@ In attempt to help patients better explore the comparative cost of procedures an
 + **App Introduction**: The application has 3 sections:
 
 	+ Hospital Recommendation: By selecting state, hospital type, disease type, expected cost range and emergency service, the app shows all tbe hospitals on the map and that satisfy such selections. At the bottom of this display, the app includes a  general information table about the hospitals.
-	+ Key Statistic: According to different type of disease this part will show average total cost in each states. This is general statistic information about hospital.
-	+ FAQ: It shows all the information about our data and all the instructions about our app. Please see FAQ if you have any questions.
+	+ Key Statistic: This section includes statistics and interesting findings in the data including an interactive map that showcases important information for the app user as regards cost and that is based on the disease type and hospital type.
+	+ Further Information: this section represents all the information about the data we used, helpful instructions for using the app, and information about the team members behind this app! 
 	
 	![screenshot](doc/abc.png)
 
