@@ -9,7 +9,8 @@ Term: Fall 2018
 
 + Team #4
 + **KNOW YOUR HOSPITALS**: 
-	+ Here is App link: (shiny app url)  https://zehan.shinyapps.io/proj2_group4/
+	+ Here is App link: https://zehan.shinyapps.io/proj2_group4/
+	+ Here is App version 1 gourp8 link: https://spring-2018-project2-group8.shinyapps.io/group8/
  	+ Team members
 		+ Zehan Wang
 		+ Xiaojie Wei
