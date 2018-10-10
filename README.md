@@ -26,6 +26,9 @@ In attempt to help patients better explore the comparative cost of procedures an
 + **Data Introduction**: 
 	+ Medicare Inpatient Charge Data: https://www.data.gov/health/hospital-charge-data/  
 	+ Medicare Hospital Quality Data: https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data
+	
++ **Shiny App**: 	
+           If you are interesting in our shinp app,please go to the https://zehan.shinyapps.io/proj2_group4/
 
 + **App Introduction**: The application has 3 sections:
 
