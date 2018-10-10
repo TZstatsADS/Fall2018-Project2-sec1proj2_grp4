@@ -113,7 +113,7 @@ navbarPage(title = "Hospital Finder",
                         sidebarLayout(
                           sidebarPanel(
                             h2("Hospitals Overview"),
-                            helpText("In the tab 'Ration of Total Payments to Total Charges', the graph shows the hospitals with the lowest ratios of total payments to the sum of total payments, covered charges and medicare payments. These are the top 25 hospitals where patients relatively paid the lowest for their medical care out of the total medical charges.")
+                            helpText("In the tab 'Ratio of Total Payments to Total Charges', the graph shows the lowest ratios of total payments to the sum of total payments, covered charges and medicare payments, in every state.")
                             ),
                           mainPanel(
                           tabsetPanel(

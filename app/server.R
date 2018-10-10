@@ -445,7 +445,7 @@ shinyServer(function(input, output){
   #output$explain0<- renderText({"This graph represents the hospitals with the lowest ratios of total payments to the sum of total payments, covered charges and medicare payments. These are the top 25 hospitals where patients relatively paid the lowest for their medical care out of the total medical charges."})
   
   output$read0<- renderText({"About Us"})
-  output$read1<- renderText({"This app was developed by a team of 5 dedicated members at Columbia Univerisity in Fall 2018:"})
+  output$read1<- renderText({"This app was developed by a team of 5 dedicated members at Columbia University in Fall 2018:"})
   output$read2<- renderText({"Ghada, Jerfel ( gj2261@barnard.edu )"})
   output$read3<- renderText({"Jin, Peiqi ( pj2324@columbia.edu )"})
   output$read4<- renderText({"li, Xiaoyi ( xl2694@columbia.edu )"})
