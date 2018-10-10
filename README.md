@@ -32,7 +32,7 @@ Good health is very important because a person of good health can put through a 
 	+ Key Statistic: According to different type of disease this part will show average total cost in each states. This is general statistic information about hospital.
 	+ FAQ: It shows all the information about our data and all the instructions about our app. Please see FAQ if you have any questions.
 	
-	![screenshot](doc/abc.jpg)
+	![screenshot](doc/abc.png)
 
 
 + **Contribution Statement**: 
