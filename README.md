@@ -4,7 +4,7 @@
 
 ![screenshot](doc/Hospital.jpg)
 
-## Project Title Lorem ipsum dolor sit amet
+## Find Your Hospital Today (shiny app url)
 Term: Fall 2018
 
 + Team #4
