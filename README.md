@@ -21,8 +21,8 @@ Good health is very important because a person of good health can put through a 
 
 
 + **Data introduction**: 
-	+ Medicare Hospital Quality Data: https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data
 	+ Medicare Inpatient Charge Data: https://www.data.gov/health/hospital-charge-data/  
+	+ Medicare Hospital Quality Data: https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data
 
 + **App introduction**:
 The application has 3 sections:
