@@ -31,7 +31,7 @@ In attempt to help patients better explore the comparative cost of procedures an
 
 	+ Hospital Recommendation: By selecting state, hospital type, disease type, expected cost range and emergency service, the app shows all tbe hospitals on the map and that satisfy such selections. At the bottom of this display, the app includes a  general information table about the hospitals.
 	+ Key Statistic: This section includes statistics and interesting findings in the data including an interactive map that showcases important information for the app user as regards cost and that is based on the disease type and hospital type.
-	+ Further Information: this section represents all the information about the data we used, helpful instructions for using the app, and information about the team members behind this app! 
+	+ Further Information: This section represents all the information about the data we used, helpful instructions for using the app, and information about the team members behind this app! 
 	
 	![screenshot](doc/abc.png)
 
