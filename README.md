@@ -29,6 +29,7 @@ Good health is very important because a person of good health can put through a 
 + **App introduction**:
 
 The application has 3 sections:
+
 	+ Hospital Recommendation: Selecting State,hospital type,disease type,expection cost range and emergency service then all hospitals that satisfies those criterions will show on the map. Then at the bottom of this part it will shows the hospital general information table 
 	+ Key Statistic : According to different type of disease this part will show average total cost in each states. This is general statistic information about hospital.
 	+ FAQ: It shows all the information about our data and all the instructions about our app. Please see FAQ if you have any questions.
