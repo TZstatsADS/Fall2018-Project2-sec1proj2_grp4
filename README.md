@@ -19,7 +19,8 @@ Term: Fall 2018
 
 + **Project Summary**: 
 
- health is very important because a person of good health can put through a large amount of work in a short time. So people put more attention on personal health in today's society.In attempt to help patients better explore the comparative price of procedures and estimate their medical service prior to receiving care, Our group design an interactive finding hospital App using Shiny app in R. This APP will help patients to do some filter of hospital such as location,hospital type,expection cost range and emergency service. Also we rank all the hospitals that satisfy our choosing criticals in order to help patients make dicisons. We also visualize the average total cost of state and average total cost of disease
+Maintaining a good health is inevitably very important because it allows people to carry out daily life activities perfectly well. As such, in modern day times, people pay attention all the more to their personal health.
+In attempt to help patients better explore the comparative cost of procedures and estimate the medical charges prior to receiving care, our group design an interactive app called "Hospital Finder" using Shiny app in R. This application will help patients find hospitals based on location, hospital type, estimated cost range and emergency service. Also we rank all the hospitals that satisfy our choosing criticals in order to help patients make dicisons. We also visualize the average total cost of state and average total cost of disease
 
 
 + **Data Introduction**: 
