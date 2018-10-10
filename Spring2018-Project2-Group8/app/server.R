@@ -79,6 +79,7 @@ shinyServer(function(input, output){
   load("./df.RData")
   load("./hospital_ratings.RData")
   load("./iips.Rdata")
+  load("./number_state.Rdata")
   
   data <- hos
   iips <- iips_data
