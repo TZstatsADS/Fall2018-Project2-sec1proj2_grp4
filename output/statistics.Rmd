@@ -1,0 +1,144 @@
+---
+title: "Untitled"
+author: "Xiaojie Wei"
+date: "October 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(viridisLite)
+library(ggplot2)
+library(viridis)
+library(dplyr)
+library(highcharter)
+
+data("usgeojson")
+
+setwd("C:/Users/Xiaojie Wei/Desktop/Fall 2018/GR5243 Applied Data Science/Project 2")
+load("output/iips_data.RData")
+load("output/iips_add.RData")
+```
+
+
+#Mapping of Hospitals Numbers
+```{r}
+#"Population" Size: Hospital numbers for each state
+charge_by_states <- iips_add %>% group_by(Provider.State) %>% dplyr::summarise(Total = n()) 
+charge_by_states$statename <- state.name[match(charge_by_states$Provider.State, state.abb)]
+charge_by_states[is.na(charge_by_states)] <- "DC"
+save(charge_by_states,file = "output/charge_by_states.RData")
+```
+
+
+```{r}
+dshmstops <- data.frame(q = c(0, exp(1:5)/exp(5)), 
+                        c = substring(viridis(5 + 1), 0, 7)) %>% 
+  list.parse2()
+
+highchart() %>%
+  hc_add_series_map(usgeojson, charge_by_states, name = "Number of Hospitals",
+                    value = "Total", joinBy = c("woename", "statename"), dataLabels = list(enabled = TRUE, format = '{point.name}'))  %>% 
+  hc_colorAxis(stops = dshmstops) %>%
+  hc_credits(enabled = TRUE, text = "Source :  https://www.medicare.gov ") %>%
+  hc_add_theme(hc_theme_google())  %>%
+  hc_mapNavigation(enabled = TRUE)
+
+```
+
+
+
+#Map of Meand of Average Covered Charges in each state each DRG
+```{r}
+acover <- iips_data %>% 
+  filter(DRG.Definition == "039 - EXTRACRANIAL PROCEDURES W/O CC/MCC") %>%
+  group_by(Provider.State) %>% dplyr::summarise(mean_charges = mean(Average.Covered.Charges)) 
+
+
+acover$statename <- state.name[match(acover$Provider.State, state.abb)]
+acover[is.na(acover)] <- "DC"
+
+save(chargedata,file = "output/charge_by_state.RData")
+
+#,
+                                #tabPanel("Average Medicare Payments",highchartOutput("plot3")),
+                                #tabPanel("Average Total Payments",highchartOutput("plot4"))
+
+highchart() %>%
+  hc_add_series_map(usgeojson, acover, name = "Number of Hospitals",
+                    value = "mean_charges", joinBy = c("woename", "statename"), dataLabels = list(enabled = TRUE, format = '{point.name}'))  %>% 
+  hc_colorAxis(stops = dshmstops) %>%
+  hc_credits(enabled = TRUE, text = "Source :  https://www.medicare.gov ") %>%
+  hc_add_theme(hc_theme_google())  %>%
+  hc_mapNavigation(enabled = TRUE)
+```
+
+
+```{r}
+  output$plot6 = renderPlot({
+    
+  boxplot_tbl = iips_data %>% filter(
+      Provider.Name == input$hospital &
+      DRG.Definition %in% input$drgCode) %>%
+      gather(key = "Average.Covered.Charges", value = "Average.Medicare.Payments", 3:4)
+
+      ggplot(boxplot_tbl,
+         aes(x = reorder(as.factor(DRG.Definition),Average.Medicare.Payments), 
+             y = Average.Medicare.Payments)) +
+    geom_boxplot(aes(fill = Average.Covered.Charges)) +
+       scale_y_continuous(labels=scales::comma) +
+       xlab("DRG")+ylab("") + theme(legend.position = "top",
+                                    axis.text.x=element_text(color = "black", size=11, angle=10, vjust=.8, hjust=0.8))+
+       scale_fill_discrete("")
+                                  
+  })
+```
+
+
+
+```{r}
+    boxplot_tbl = iips_data %>% filter(
+      #Provider.Name == input$hospital &
+        DRG.Definition == "039 - EXTRACRANIAL PROCEDURES W/O CC/MCC") %>%
+      gather(key = "Average.Covered.Charges", value = "Average.Medicare.Payments", 3:4)
+    
+    ggplot(boxplot_tbl,
+           aes(x = reorder(as.factor(DRG.Definition),Average.Medicare.Payments), 
+               y = Average.Medicare.Payments)) +
+      geom_boxplot(aes(fill = Average.Covered.Charges)) +
+      scale_y_continuous(labels=scales::comma) +
+      xlab("DRG")+ylab("") + theme(legend.position = "top",
+                                   axis.text.x=element_text(color = "black", size=11, angle=10, vjust=.8, hjust=0.8))+
+      scale_fill_discrete("")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
