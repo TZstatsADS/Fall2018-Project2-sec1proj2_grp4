@@ -8,7 +8,8 @@
 Term: Fall 2018
 
 + Team #4
-+ **KNOW YOUR HOSPITALS**: + Team members
++ **KNOW YOUR HOSPITALS**: 
++ Team members
 	+ team member 1 Zehan Wang
 	+ team member 2 Xiaojie Wei
 	+ team member 3 Ghada Jerfel
