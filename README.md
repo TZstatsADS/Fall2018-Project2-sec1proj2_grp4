@@ -20,7 +20,7 @@ Term: Fall 2018
 + **Project Summary**: 
 
 Maintaining a good health is inevitably very important because it allows people to carry out daily life activities perfectly well. As such, in modern day times, people pay attention all the more to their personal health.
-In attempt to help patients better explore the comparative cost of procedures and estimate the medical charges prior to receiving care, our group design an interactive app called "Hospital Finder" using Shiny app in R. This application will help patients find hospitals based on location, hospital type, estimated cost range and emergency service. Also we rank all the hospitals that satisfy our choosing criticals in order to help patients make dicisons. We also visualize the average total cost of state and average total cost of disease
+In attempt to help patients better explore the comparative cost of procedures and estimate the medical charges prior to receiving care, our group design an interactive app called "Hospital Finder" using Shiny app in R. This application will help patients find hospitals based on location, hospital type, estimated cost range and the availability of emergency services. This application also ranks all the hospitals that satisfy the criterias of certain measurments (such as safety of care of hte hospital) in order to help patients make personalized decisoins. Additionally, it visualizes interesting findings concerning the data it uses, which can be found under Key Statistics section.
 
 
 + **Data Introduction**: 
@@ -29,7 +29,7 @@ In attempt to help patients better explore the comparative cost of procedures an
 
 + **App Introduction**: The application has 3 sections:
 
-	+ Hospital Recommendation: Selecting State, hospital type, disease type, expection cost range and emergency service then all hospitals that satisfies those criterions will show on the map. Then at the bottom of this part it will shows the hospital general information table 
+	+ Hospital Recommendation: By selecting state, hospital type, disease type, expected cost range and emergency service, the app shows all tbe hospitals on the map and that satisfy such selections. At the bottom of this display, the app includes a  general information table about the hospitals.
 	+ Key Statistic: According to different type of disease this part will show average total cost in each states. This is general statistic information about hospital.
 	+ FAQ: It shows all the information about our data and all the instructions about our app. Please see FAQ if you have any questions.
 	
@@ -38,11 +38,11 @@ In attempt to help patients better explore the comparative cost of procedures an
 
 + **Contribution Statement**: 
 All team members are actively involved in all stages of this project and help design the app. All team members combined and modified codes together.
-  + Zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
-  + Xiaojie Wei: Designed the ui and server part of "key statistic"
-  + Ghada Jerfel: Designed the ui and server part of "key statistic"
-  + Xiaoyi li: Designed the ui and server part of "Hospital recommendation"
-  + Perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
+  + Zehan Wang: Designed the ui and server part of "Hospital recommendation" as well as the hospital map
+  + Xiaojie Wei: Designed the ui and server part of "Key Statistics"
+  + Ghada Jerfel: Designed the ui and server part of "Key Statistics"
+  + Xiaoyi li: Designed the ui and server part of "Hospital Recommendation"
+  + Perqi Jin: Desigedn the ui and server part of "Hospital Recommendation"
 
 
 
