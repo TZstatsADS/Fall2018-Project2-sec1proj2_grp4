@@ -1,10 +1,10 @@
-# Project 2: Shiny App Development Version 2.0
+# Project 2: Find Your Hospital Today!
 
 ### [Project Description](doc/project2_desc.md)
 
 ![screenshot](doc/Hospital.jpg)
 
-## Find Your Hospital Today
+## Hospital Finder App
 Term: Fall 2018
 
 + Team #4
@@ -37,7 +37,7 @@ In attempt to help patients better explore the comparative cost of procedures an
 
 
 + **Contribution Statement**: 
-All team members are actively involved in all stages of this project and help design the app. All team members combined and modified codes together.
+All team members contributed to the GitHub repository and prepared for the presentation. All team members were actively involved in all stages of this project and helped design the app. All team members approve of the work presented in our GitHub repository including this contribution statement.
   + Zehan Wang: Designed the ui and server part of "Hospital recommendation" as well as the hospital map
   + Xiaojie Wei: Designed the ui and server part of "Key Statistics"
   + Ghada Jerfel: Designed the ui and server part of "Key Statistics"
