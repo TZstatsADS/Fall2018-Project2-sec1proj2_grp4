@@ -15,7 +15,7 @@ Term: Fall 2018
 	+ team member 4 Xiaoyi Li
 	+ team member 5 Peiqi Jin
 
-+ **Project summary**:Good health is very important because a person of good health can put through a large amount of work in a short time. So people put more attention on personal health in today's society.In attempt to help patients better explore the comparative price of procedures and estimate their medical service prior to receiving care, Our group design an interactive finding hospital App using Shiny app in R. This APP will help patients to do some filter of hospital such as location,hospital type,expection cost range and emergency service. Also we rank all the hospitals that satisfy our choosing criticals in order to help patients make dicisons. We also visualize the average total cost of state and average total cost of disease
++ **Project summary**: Good health is very important because a person of good health can put through a large amount of work in a short time. So people put more attention on personal health in today's society.In attempt to help patients better explore the comparative price of procedures and estimate their medical service prior to receiving care, Our group design an interactive finding hospital App using Shiny app in R. This APP will help patients to do some filter of hospital such as location,hospital type,expection cost range and emergency service. Also we rank all the hospitals that satisfy our choosing criticals in order to help patients make dicisons. We also visualize the average total cost of state and average total cost of disease
 
 
 + **Data introduction**: 
@@ -31,11 +31,11 @@ The application has 3 sections:
 
 + **Contribution statement**: 
 All team members are actively involved in all stages of this project and help design the app. All team members combined and modified codes together.
-  + zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
-  + xiaojie Wei: Designed the ui and server part of "key statistic"
+  + Zehan Wang: Mainly responsible to create map for hospital and design the ui and server part of "Hospital recommendation"
+  + Xiaojie Wei: Designed the ui and server part of "key statistic"
   + Ghada Jerfel: Designed the ui and server part of "key statistic"
-  + xiaoyi li: Designed the ui and server part of "Hospital recommendation"
-  + perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
+  + Xiaoyi li: Designed the ui and server part of "Hospital recommendation"
+  + Perqi Jin: Desigedn the ui and server part of "Hospital recommendation"
 
 
 
